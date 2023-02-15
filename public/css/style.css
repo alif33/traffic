@@ -89,7 +89,7 @@ a {
   position: absolute;
   z-index: 1000;
   top: 400px;
-  left: 337px;
+  left: 25%;
 }
 .box-title {
   text-transform: capitalize;

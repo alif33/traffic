@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <div className="header">
             <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-4 col-sm-6 col-6">
                    <img
                         className="logo"
                         src="/img/vt-logo.svg"
@@ -13,7 +13,7 @@ export default function Header() {
                         width="145px"
                     />
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 col-sm-1 col-1">
                     <div className="search-box">
                         <input
                             className="search"
@@ -26,7 +26,7 @@ export default function Header() {
                         </button>
                     </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 col-sm-5 col-5">
                     <div className="mobile-menu">
                         <BiMenu
                             size={28}
