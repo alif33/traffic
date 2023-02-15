@@ -72,7 +72,7 @@ a {
 }
 
 .mobile-nav {
-  z-index: 10000;
+  z-index: 10000000 !important;
   list-style: none;
   padding: 10px 0px;
   padding-bottom: 0 !important;
