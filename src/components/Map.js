@@ -27,8 +27,8 @@ export default function Map() {
              </div>
              <div id="mobile-menu" className="mobile-nav-menu">
                  <ul className="mobile-nav">
-                     <li><Link to="traffic-information">Traffic Information</Link></li>
-                     <li><Link>Maps</Link></li>
+                     <li><Link to="/traffic-information">Traffic Information</Link></li>
+                     <li><Link to="/">Maps</Link></li>
                  </ul>
              </div>
              <div className="parallax"></div>
