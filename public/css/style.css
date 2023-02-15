@@ -92,7 +92,6 @@ a {
 
 .mobile-nav li a{
   line-height: 20px;
-  color: #0079b4 !important;
 }
 
 .mobile-nav-menu {
@@ -194,15 +193,27 @@ label {
   }
 }
 
-@media (min-width:1020px) and (max-width:1399px) {
+@media (min-width:1020px) and (max-width:1249px) {
   .search-box {
     width: 330px;
+  }
+  .w-50{
+    width: 60% !important;
+  }
+  .box {
+    left: 20%;
   }
 }
 
 @media (min-width:920px) and (max-width:1019px) {
   .search-box {
     width: 300px;
+  }
+  .w-50{
+    width: 65% !important;
+  }
+  .box {
+    left: 17%;
   }
 }
 
@@ -212,6 +223,12 @@ label {
   }
   .nav li a {
     padding: 0px 6px;
+  }
+  .w-50{
+    width: 70% !important;
+  }
+  .box {
+    left: 15%;
   }
 }
 
@@ -224,6 +241,12 @@ label {
   }
   .hamberger-icon {
     display: block;
+  }
+  .w-50{
+    width: 85% !important;
+  }
+  .box {
+    left: 8%;
   }
 }
 
