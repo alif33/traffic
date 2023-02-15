@@ -9,7 +9,7 @@ export default function Map() {
 
     return (
         <div className="hero-section">
-            <div className="box w-50">
+            <div className="map-box w-75">
                 <div id="map" className="map-container">
                     <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
                         <TileLayer
