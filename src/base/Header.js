@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { BiSearch, BiMenu } from "react-icons/bi";
+import { BiSearch, BiMenu, Bix, BiX } from "react-icons/bi";
 
 export default function Header() {
     const [collapse, setCollapse] = useState(false);
@@ -42,10 +42,20 @@ export default function Header() {
                 <div className="col-md-4 col-sm-5 col-5">
                     <div onClick={handleToggle} className="hamberger-icon">
                         <span onClick={handleToggle} className="pointer">
-                            <BiMenu
-                                size={28}
-                                color="#ffffff"
-                            />
+                            {
+                                !collapse?(
+                                    <BiMenu
+                                        size={28}
+                                        color="#ffffff"
+                                    />
+                                ):(
+                                    <BiX
+                                        size={28}
+                                        color="#ffffff"
+                                    />
+                                )
+                            }
+                            
                         </span>
                     </div>
                     <ul className="nav">
