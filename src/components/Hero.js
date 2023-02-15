@@ -67,6 +67,12 @@ export default function Hero() {
                 {/* </div> */}
                 </div>
             </div>
+            <div id="mobile-menu" className="mobile-nav-menu">
+                <ul className="mobile-nav">
+                    <li><a>Traffic Information</a></li>
+                    <li><a>Maps</a></li>
+                </ul>
+            </div>
             <div className="parallax"></div>
         </div>
     );

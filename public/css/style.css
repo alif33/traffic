@@ -19,10 +19,20 @@ a {
 .mt-100 {
   margin-top: 100px;
 }
+
 .container-95 {
   width: 95%;
   margin: 0 auto;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.block {
+  display: block !important;
+}
+
 .header {
   height: 70px;
   background-color: #0079b4;
@@ -55,16 +65,13 @@ a {
   border-radius: 6px;
 }
 
-.nav {
+.nav, .mobile-nav {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.nav li {
-  
-}
-.nav li a{
+.nav li a, .mobile-nav li a{
   color: #ffffff;
   padding: 0px 12px;
   line-height: 62px;
@@ -73,7 +80,11 @@ a {
   font-variant: petite-caps;
 }
 
-.mobile-menu {
+.mobile-nav-menu {
+  display: none;
+}
+
+.hamberger-icon {
   display: none;
   float: right;
   padding: 21px;
@@ -196,7 +207,7 @@ label {
   .nav {
     display: none;
   }
-  .mobile-menu {
+  .hamberger-icon {
     display: block;
   }
 }

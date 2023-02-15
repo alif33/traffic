@@ -1,7 +1,20 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiSearch, BiMenu } from "react-icons/bi";
 
 export default function Header() {
+    const [collapse, setCollapse] = useState(false);
+
+    const handleToggle = ()=>{
+        if(!collapse){
+            document.getElementById("mobile-menu").classList.add("block")
+            setCollapse(true)
+        }else{
+            document.getElementById("mobile-menu").classList.remove("block")
+            setCollapse(false)
+        }
+    }
+
     return (
         <div className="header">
             <div className="row">
@@ -27,11 +40,13 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="col-md-4 col-sm-5 col-5">
-                    <div className="mobile-menu">
-                        <BiMenu
-                            size={28}
-                            color="#ffffff"
-                        />
+                    <div onClick={handleToggle} className="hamberger-icon">
+                        <span onClick={handleToggle} className="pointer">
+                            <BiMenu
+                                size={28}
+                                color="#ffffff"
+                            />
+                        </span>
                     </div>
                     <ul className="nav">
                         <li><Link>Traffic Information</Link></li>
