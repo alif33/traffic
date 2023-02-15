@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch, BiMenu } from "react-icons/bi";
 
 export default function Header() {
     return (
@@ -27,6 +27,12 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="col-md-4">
+                    <div className="mobile-menu">
+                        <BiMenu
+                            size={28}
+                            color="#ffffff"
+                        />
+                    </div>
                     <ul className="nav">
                         <li><Link>Traffic Information</Link></li>
                         <li><Link>Maps</Link></li>
