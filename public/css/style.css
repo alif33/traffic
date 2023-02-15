@@ -65,10 +65,20 @@ a {
   border-radius: 6px;
 }
 
-.nav, .mobile-nav {
+.nav {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.mobile-nav {
+  list-style: none;
+  padding: 10px 0px;
+  padding-bottom: 0 !important;
+}
+
+.mobile-nav li {
+  padding: 10px 0px;
 }
 
 .nav li a, .mobile-nav li a{
@@ -78,6 +88,11 @@ a {
   font-size: 20px;
   font-weight: 500;
   font-variant: petite-caps;
+}
+
+.mobile-nav li a{
+  line-height: 20px;
+  color: #0079b4 !important;
 }
 
 .mobile-nav-menu {
