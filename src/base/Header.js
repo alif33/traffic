@@ -59,7 +59,7 @@ export default function Header() {
                         </span>
                     </div>
                     <ul className="nav">
-                        <li><Link>Traffic Information</Link></li>
+                        <li><Link to="/traffic-information">Traffic Information</Link></li>
                         <li><Link>Maps</Link></li>
                     </ul>
                 </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
     return (
         <div className="hero-section">
@@ -69,8 +71,8 @@ export default function Hero() {
             </div>
             <div id="mobile-menu" className="mobile-nav-menu">
                 <ul className="mobile-nav">
-                    <li><a>Traffic Information</a></li>
-                    <li><a>Maps</a></li>
+                    <li><Link to="/traffic-information">Traffic Information</Link></li>
+                    <li><Link>Maps</Link></li>
                 </ul>
             </div>
             <div className="parallax"></div>
