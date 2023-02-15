@@ -1,6 +1,7 @@
 // import GoogleMapReact from 'google-map-react';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
+import { Link } from 'react-router-dom';
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default function Map() {
@@ -26,8 +27,8 @@ export default function Map() {
              </div>
              <div id="mobile-menu" className="mobile-nav-menu">
                  <ul className="mobile-nav">
-                     <li><a>Traffic Information</a></li>
-                     <li><a>Maps</a></li>
+                     <li><Link>Traffic Information</Link></li>
+                     <li><Link>Maps</Link></li>
                  </ul>
              </div>
              <div className="parallax"></div>
