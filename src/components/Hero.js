@@ -1,6 +1,73 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-export default function Hero() {
+export default function Hero({ trafficInfos, baseData, setTrafficInfos }) {
+    const {
+        register,
+        handleSubmit,
+        getValues,
+        formState: { errors },
+      } = useForm();
+
+    const filterByDesignation = ()=>{
+        const { designation  } = getValues();
+            if(designation.length>0){
+                const filterBydesignation = baseData.filter(item => {
+                    return item.affectedLines.some(line =>{
+                        return designation === null || line.designation === designation;
+                    }); 
+                })
+    
+                setTrafficInfos(filterBydesignation);
+
+
+                // if(filterBydesignation){
+                //     setTrafficInfos(filterBydesignation);
+                // }else{
+                //     setTrafficInfos(baseData);
+                // }
+            }else{
+                setTrafficInfos(baseData);
+            }
+            
+
+
+            
+    }
+
+
+
+
+
+
+
+
+    const handleFilter = () =>{
+        const { designation  } = getValues();
+        console.log(designation);
+        
+        const query = {
+            defaultTransportModeCode: null
+        }
+
+        const filteredData = trafficInfos.filter(item => {
+            // Check if the designation filter matches any of the affected lines
+            const lineMatchesDesignation = item.affectedLines.some(line => {
+              return designation === null || line.designation === designation;
+            });
+          
+            // Check if the defaultTransportModeCode filter matches any of the affected lines
+            const lineMatchesDefaultTransportModeCode = item.affectedLines.some(line => {
+              return query.defaultTransportModeCodeFilter === null || line.defaultTransportModeCode === query.defaultTransportModeCodeFilter;
+            });
+          
+            // Return true if both filters are null or at least one filter matches
+            return (designation === null && query.defaultTransportModeCodeFilter === null) ||
+                   (lineMatchesDesignation && lineMatchesDefaultTransportModeCode);
+          });          
+    }
+
     return (
         <div className="hero-section">
             <div className="box w-50">
@@ -16,6 +83,16 @@ export default function Hero() {
                                 type="text" 
                                 className="form-control" 
                                 placeholder="E.g. Svart express, X1 or 100"
+                                {...register("designation", { onChange: filterByDesignation })}
+                                // {...register("designation")} 
+
+                                // onChange={event=>{
+                                //     setQuery({
+                                //         ...query,
+                                //         designationFilter: event.target.value
+                                //     })
+                                //     handleFilter()
+                                // }}
                             />
                         </div>
                         <div className="mb-4">

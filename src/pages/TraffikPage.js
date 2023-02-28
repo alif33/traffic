@@ -1,11 +1,13 @@
+import { useEffect, useState } from 'react';
 import Layout from '../base/Layout';
 import Hero from '../components/Hero';
 import Form from '../components/Form';
 import { authPost, __getData } from '../helpers/HttpServices'
-import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [baseData, setBaseData] = useState();
   const [trafficInfos, setTrafficInfos] = useState();
+
   // cosnt [ _count, setCount ] = useState(0);
 
 
@@ -34,6 +36,7 @@ export default function Home() {
       const data = await response.json();
       console.log(data);
       setTrafficInfos(data);
+      setBaseData(data);
       // setCount(_count+1)
     }
     
@@ -46,10 +49,12 @@ export default function Home() {
   return (
     <Layout>
       <Hero
+        baseData={baseData}
         trafficInfos={trafficInfos}
         setTrafficInfos={setTrafficInfos}
       />
       <Form
+        baseData={baseData}
         trafficInfos={trafficInfos}
         setTrafficInfos={setTrafficInfos}
       />
